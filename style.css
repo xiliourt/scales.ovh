@@ -1,0 +1,440 @@
+/* --- Original Light Mode Styles (Base Styles) --- */
+.disclaimer {
+    color: #f97316;
+    /* Orange color for disclaimer */
+    font-weight: bold;
+    border: 1px dashed #fb923c;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    background-color: #fff7ed;
+    margin-top: 1rem;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: #f4f4f8;
+    /* Light background - Default */
+    color: #333;
+    /* Dark text - Default */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    /* Dark blue-gray text */
+    border-bottom: 2px solid #3498db;
+    /* Blue border */
+    padding-bottom: 10px;
+    margin-top: 75px;
+}
+
+.section {
+    background-color: white;
+    /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Shadow */
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.section h2 {
+    color: #2980b9;
+    /* Blue text */
+    border-bottom: 1px solid #bdc3c7;
+    /* Light gray border */
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+.question-container {
+    background-color: white;
+    /* White background */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    /* Very light gray border */
+}
+
+.question-title {
+    font-weight: bold;
+    color: #2980b9;
+    /* Blue text */
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    /* Transparent border initially */
+    /* Text color inherits from body (#333) */
+}
+
+label:hover {
+    background-color: #e9f5ff;
+    /* Lighter blue hover background */
+    border-color: #cce7ff;
+    /* Light blue border */
+}
+
+input[type="radio"]:checked+label {
+    background-color: #d6eaf8;
+    /* Light blue background for selected */
+    border-color: #aed6f1;
+    /* Slightly darker blue border */
+    font-weight: bold;
+    /* Text color inherits from body (#333) */
+}
+
+input[type="radio"]:focus+label {
+    outline: 2px solid #3498db;
+    /* Blue outline */
+    outline-offset: 2px;
+}
+
+input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    /* Light gray border */
+    border-radius: 4px;
+    margin-bottom: 10px;
+    width: calc(100% - 18px);
+    box-sizing: border-box;
+    background-color: white;
+    /* White background */
+    color: #333;
+    /* Dark text */
+}
+
+.text-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    /* Dark text */
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    /* Blue background */
+    color: white;
+    /* White text */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2980b9;
+    /* Darker blue on hover */
+}
+
+#score-display {
+    position: fixed;
+    right: 20px;
+    width: 150px;
+    padding: 15px;
+    background-color: #e9f5ff;
+    /* Light blue background */
+    border: 1px solid #aed6f1;
+    /* Matching border */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    /* Shadow */
+    z-index: 1000;
+    text-align: center;
+    font-weight: bold;
+    color: #2c3e50;
+    /* Dark blue-gray text */
+}
+
+#score-display #current-score {
+    display: block;
+    font-size: 1.8em;
+    margin-top: 5px;
+    color: #3498db;
+    /* Blue color for the score */
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #ccc;
+    /* Light gray border */
+    color: #555;
+    /* Medium gray text */
+    font-size: 0.9em;
+}
+
+.required-message {
+    color: red;
+    /* Red text */
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    display: none;
+}
+
+.results-disclaimer {
+    background-color: #f9f9f9;
+    /* Very light gray background */
+    border: 1px solid #e0e0e0;
+    /* Light gray border */
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 0.9em;
+    border-left: 5px solid #e74c3c;
+    /* Red left border */
+    color: #333;
+    /* Dark text */
+    display: none;
+}
+
+#results {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #eaf4ff;
+    /* Very light blue background */
+    border-radius: 5px;
+    color: #333;
+    /* Dark text */
+}
+
+
+/* ============================================= */
+/* --- Dark Mode Styles (Applied via body.dark-mode class) --- */
+/* ============================================= */
+
+body.dark-mode {
+    background-color: #1f2937;
+    color: #ffffff;
+    /* Changed from #d1d5db for consistency */
+}
+
+body.dark-mode .disclaimer {
+    color: #fdba74;
+    /* Lighter orange for better contrast on dark */
+    border-color: #f97316;
+    /* Keep border orange */
+    background-color: #4a2c0f;
+    /* Dark orange/brown background */
+}
+
+body.dark-mode h1 {
+    color: #e5e7eb;
+    /* Lighter text */
+    border-bottom-color: #5dade2;
+    /* Lighter blue border */
+}
+
+body.dark-mode .section {
+    background-color: #374151;
+    /* Slightly lighter dark gray */
+    box-shadow: none;
+    /* Remove shadow, less effective on dark */
+    border: 1px solid #4b5563;
+    /* Add subtle border instead */
+}
+
+body.dark-mode .section h2 {
+    color: #7cc5f8;
+    /* Lighter blue text */
+    border-bottom-color: #4b5563;
+    /* Darker gray border */
+}
+
+body.dark-mode .question-container {
+    background-color: #374151;
+    /* Match section background */
+    border-color: #4b5563;
+    /* Darker gray border */
+}
+
+body.dark-mode .question-title {
+    color: #7cc5f8;
+    /* Lighter blue text */
+}
+
+body.dark-mode label {
+    /* Text color inherited from body.dark-mode (#ffffff) */
+    border-color: transparent;
+    color: #ffffff;
+    /* Explicitly set */
+}
+
+body.dark-mode label:hover {
+    background-color: #4b5563;
+    /* Darker gray hover background */
+    border-color: #6b7280;
+    /* Slightly lighter gray border */
+}
+
+body.dark-mode input[type="radio"]:checked+label {
+    background-color: #436a8f;
+    /* Darker blue background for selected */
+    border-color: #60a5fa;
+    /* Brighter blue border */
+    color: #ffffff;
+    /* Ensure text is white */
+}
+
+body.dark-mode input[type="radio"]:focus+label {
+    outline-color: #60a5fa;
+    /* Lighter blue outline */
+}
+
+body.dark-mode input[type="text"] {
+    border-color: #6b7280;
+    /* Medium-dark gray border */
+    background-color: #4b5563;
+    /* Darker input background */
+    color: #e5e7eb;
+    /* Light text */
+}
+
+body.dark-mode .text-label {
+    color: #d1d5db;
+    /* Kept slightly dimmer gray for labels */
+}
+
+body.dark-mode input[type="submit"] {
+    background-color: #3b82f6;
+    /* Standard blue (adjust if needed) */
+    color: white;
+    /* Keep white text */
+}
+
+body.dark-mode input[type="submit"]:hover {
+    background-color: #2563eb;
+    /* Slightly darker blue on hover */
+}
+
+body.dark-mode #score-display {
+    background-color: #374151;
+    /* Dark gray background */
+    border-color: #4b5563;
+    /* Darker gray border */
+    box-shadow: none;
+    /* Remove shadow */
+    color: #e5e7eb;
+    /* Light text */
+}
+
+body.dark-mode #score-display #current-score {
+    color: #93c5fd;
+    /* Lighter blue for the score */
+}
+
+body.dark-mode footer {
+    border-top-color: #4b5563;
+    /* Darker gray border */
+    color: #9ca3af;
+    /* Medium-light gray text */
+}
+
+body.dark-mode .required-message {
+    color: #f87171;
+    /* Slightly lighter red for better visibility */
+}
+
+body.dark-mode .results-disclaimer {
+    background- VScodeTheme=#4b5563;
+    /* Dark gray background */
+    border-color: #6b7280;
+    /* Medium-dark gray border */
+    border-left-color: #ef4444;
+    /* Keep red, maybe slightly adjusted */
+    color: #e5e7eb;
+    /* Light text */
+}
+
+body.dark-mode #results {
+    background-color: #2d4a6e;
+    /* Dark blue background */
+    color: #e5e7eb;
+    /* Light text */
+}
+
+body.dark-mode .results-disclaimer {
+    background-color: #2d4a6e;
+    /* Very light gray background */
+    border: 1px solid #e0e0e0;
+    /* Light gray border */
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 0.9em;
+    border-left: 5px solid #e74c3c;
+    /* Red left border */
+    color: #e5e7eb;
+    /* Dark text */
+    display: none;
+}
+
+/* --- Layout Media Queries (Apply in both Light and Dark Mode) --- */
+@media (max-width: 1000px) {
+    body {
+        /* This padding might need review depending on fixed elements */
+        padding-right: 190px;
+    }
+
+    #score-display {
+        bottom: 20px;
+        /* Ensure position is correct relative to viewport */
+        top: auto;
+        /* Override min-width rule */
+
+    }
+
+    /* Apply dark mode styles *within* this media query if needed */
+    body.dark-mode {
+        /* Any specific dark mode overrides for small screens */
+    }
+}
+
+@media (min-width: 1000px) {
+    #score-display {
+        top: 100px;
+        /* Ensure position is correct relative to viewport */
+        bottom: auto;
+        /* Override max-width rule */
+    }
+
+    /* Apply dark mode styles *within* this media query if needed */
+    body.dark-mode {
+        /* Any specific dark mode overrides for large screens */
+    }
+}

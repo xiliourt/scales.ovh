@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health of the Nation Outcome Scales (HoNOS)</title>
+   <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f8;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .question-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        .question-title {
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        label:hover {
+            background-color: #f0f0f0;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        .disorders-key {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Health of the Nation Outcome Scales (HoNOS) Form</h1>
+    <form method="post" action="/honos/results.php">
+        <div class="question-container">
+            <p class="question-title">1. Overactive, aggressive, disruptive or agitated behavior</p>
+            <label><input type="radio" name="1" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="1" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="1" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="1" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="1" value="4"> 4 - Severe problem</label>
+        </div>
+        <!-- Repeat similar blocks for questions 2 to 12 -->
+        <div class="question-container">
+            <p class="question-title">2. Non-accidental self-injury</p>
+            <label><input type="radio" name="2" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="2" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="2" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="2" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="2" value="4"> 4 - Severe problem</label>
+        </div>
+        <div class="question-container">
+            <p class="question-title">3. Problem-drinking or drug-taking</p>
+            <label><input type="radio" name="3" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="3" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="3" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="3" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="3" value="4"> 4 - Severe problem</label>
+        </div>
+        <div class="question-container">
+            <p class="question-title">4. Cognitive problems</p>
+            <label><input type="radio" name="4" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="4" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="4" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="4" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="4" value="4"> 4 - Severe problem</label>
+        </div>
+        <div class="question-container">
+            <p class="question-title">5. Physical illness or disability problems </p>
+            <label><input type="radio" name="5" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="5" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="5" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="5" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="5" value="4"> 4 - Severe problem</label>
+        </div>
+        <div class="question-container">
+            <p class="question-title">6. Problems with hallucinations and delusions</p>
+            <label><input type="radio" name="6" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="6" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="6" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="6" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="6" value="4"> 4 - Severe problem</label>
+        </div>
+        <div class="question-container">
+            <p class="question-title">7. Problems with depressed mood</p>
+            <label><input type="radio" name="7" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="7" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="7" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="7" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="7" value="4"> 4 - Severe problem</label>
+        </div>
+        <div class="question-container">
+            <p class="question-title">8. Other mental and behavioural problems</p>
+            <label><input type="radio" name="8" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="8" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="8" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="8" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="8" value="4"> 4 - Severe problem</label>
+            <p class="question-title">8.1 Key for Other mental and behavioural problems (seperate via a comma): </p>
+                <label><input type="checkbox" value="A" name="Disorders[]">A: Phobias – including fear of leaving home, crowds, public places, travelling, social phobias and specific phobias. </label>
+                <label><input type="checkbox" value="B" name="Disorders[]">B: Anxiety and panics.</label>
+                <label><input type="checkbox" value="C" name="Disorders[]">C: Obsessional and compulsive problems.</label>
+                <label><input type="checkbox" value="D" name="Disorders[]">D: Reactions to severely stressful events and traumas.</label>
+                <label><input type="checkbox" value="E" name="Disorders[]">E: Dissociative (‘conversion’) problems.</label>
+                <label><input type="checkbox" value="F" name="Disorders[]">F: Somatisation – persisting physical complaints in spite of full investigation and reassurance that no disease is present.</label>
+                <label><input type="checkbox" value="G" name="Disorders[]">G: Problems with appetite, over- or under-eating.</label>
+                <label><input type="checkbox" value="H" name="Disorders[]">H: Sleep problems.</label>
+                <label><input type="checkbox" value="I" name="Disorders[]">I: Sexual problems.</label>
+                <label><input type="checkbox" value="J" name="Disorders[]">J: Problems not specified elsewhere including expansive or elated mood.</label>
+        </div>
+
+            
+        <div class="question-container">
+            <p class="question-title">9. Problems with relationships</p>
+            <label><input type="radio" name="9" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="9" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="9" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="9" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="9" value="4"> 4 - Severe problem</label>
+        </div>
+        <div class="question-container">
+            <p class="question-title">10. Problems with activities of daily living</p>
+            <label><input type="radio" name="10" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="10" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="10" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="10" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="10" value="4"> 4 - Severe problem</label>
+        </div>
+        <div class="question-container">
+            <p class="question-title">11. Problems with living conditions</p>
+            <label><input type="radio" name="11" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="11" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="11" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="11" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="11" value="4"> 4 - Severe problem</label>
+        </div>
+        <div class="question-container">
+            <p class="question-title">12. Problems with occupation and activities</p>
+            <label><input type="radio" name="12" value="0" checked="checked" required> 0 - No problem</label>
+            <label><input type="radio" name="12" value="1"> 1 - Minor problem</label>
+            <label><input type="radio" name="12" value="2"> 2 - Mild problem</label>
+            <label><input type="radio" name="12" value="3"> 3 - Moderate problem</label>
+            <label><input type="radio" name="12" value="4"> 4 - Severe problem</label>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+<footer style="text-align:center">
+    <div>© 2024 Xiliourt. All rights reserved.</div>
+    <nav>
+        <a href="../privacy.html">Privacy Policy</a>
+    </nav>
+</footer>
+</html>

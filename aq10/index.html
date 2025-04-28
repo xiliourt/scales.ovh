@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="image/x-icon" href="../favicon.png">
+  <title>Abbreviated Life Skills Profile (LSP-16)</title>
+  <script>
+        // Function to set today's date when the page loads
+        window.onload = function() {
+            // Get today's date
+            const today = new Date();
+            
+            // Format the date as YYYY-MM-DD (standard HTML date input format)
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            
+            // Set the value of the date input
+            document.getElementById('Date').value = `${year}-${month}-${day}`;
+        }
+    </script>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+        background-color: #f4f4f8;
+        color: #333;
+    }
+
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+    }
+
+    .question-container {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 15px;
+    }
+
+    .question-title {
+        font-weight: bold;
+        color: #2980b9;
+        margin-bottom: 10px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        padding: 5px;
+        border-radius: 4px;
+    }
+
+    label:hover {
+        background-color: #f0f0f0;
+    }
+
+    input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #2980b9;
+    }
+
+    .disorders-key {
+        background-color: #f9f9f9;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 15px;
+        font-size: 0.9em;
+    }
+</style>
+</head>
+<body>
+  <h1>Abbreviated Life Skills Profile (LSP-16)</h1>
+
+  <form method="post" action="/aq10/results.php">
+
+    <h2>Instructions:</h2>
+    <p>For each question, tick the appropriate response.</p>
+    <div class="question-container">
+        <p class="question-title">1. I often notice small sounds when others do not.</p>
+        <label><input type="radio" name="Question1" value="-" checked="checked"> Definitely Agree  </label>
+        <label><input type="radio" name="Question1" value="--"> Slightly Agree  </label>
+        <label><input type="radio" name="Question1" value="---"> Slightly Disagree  </label>
+        <label><input type="radio" name="Question1" value="----"> Definitely Disagree  </label>
+    </div>
+
+    <div class="question-container">
+      <p class="question-title">2. I usually concentrate more on the whole picture, rather than the small details</p>
+      <label><input type="radio" name="Question2" value="-" checked="checked"> Definitely Agree  </label>
+      <label><input type="radio" name="Question2" value="--"> Slightly Agree  </label>
+      <label><input type="radio" name="Question2" value="---"> Slightly Disagree  </label>
+      <label><input type="radio" name="Question2" value="----"> Definitely Disagree  </label>
+    </div>
+    <div class="question-container">
+        <p class="question-title">3. I find it easy to do more than one thing at once</p>
+        <label><input type="radio" name="Question3" value="-" checked="checked"> Definitely Agree  </label>
+        <label><input type="radio" name="Question3" value="--"> Slightly Agree  </label>
+        <label><input type="radio" name="Question3" value="---"> Slightly Disagree  </label>
+        <label><input type="radio" name="Question3" value="----"> Definitely Disagree  </label>
+    </div>
+    
+    <div class="question-container">
+        <p class="question-title">4. If there is an interruption, I can switch back to what I was doing very quickly</p>
+        <label><input type="radio" name="Question4" value="-" checked="checked"> Definitely Agree  </label>
+        <label><input type="radio" name="Question4" value="--"> Slightly Agree  </label>
+        <label><input type="radio" name="Question4" value="---"> Slightly Disagree  </label>
+        <label><input type="radio" name="Question4" value="----"> Definitely Disagree  </label>
+    </div>
+    <div class="question-container">
+        <p class="question-title">5. I find it easy to ‘read between the lines when someone is talking to me</p>
+        <label><input type="radio" name="Question5" value="-" checked="checked"> Definitely Agree  </label>
+        <label><input type="radio" name="Question5" value="--"> Slightly Agree  </label>
+        <label><input type="radio" name="Question5" value="---"> Slightly Disagree  </label>
+        <label><input type="radio" name="Question5" value="----"> Definitely Disagree  </label>
+    </div>
+    
+    <div class="question-container">
+        <p class="question-title">6. I know how to tell if someone listening to me is getting bored</p>
+        <label><input type="radio" name="Question6" value="-" checked="checked"> Definitely Agree  </label>
+        <label><input type="radio" name="Question6" value="--"> Slightly Agree  </label>
+        <label><input type="radio" name="Question6" value="---"> Slightly Disagree  </label>
+        <label><input type="radio" name="Question6" value="----"> Definitely Disagree  </label>
+    </div>
+    <div class="question-container">
+        <p class="question-title">7. When I'm reading a story I find it difficultto work out the characters' intentions</p>
+        <label><input type="radio" name="Question7" value="-" checked="checked"> Definitely Agree  </label>
+        <label><input type="radio" name="Question7" value="--"> Slightly Agree  </label>
+        <label><input type="radio" name="Question7" value="---"> Slightly Disagree  </label>
+        <label><input type="radio" name="Question7" value="----"> Definitely Disagree  </label>
+    </div>
+    
+    <div class="question-container">
+        <p class="question-title">8. I like to collect information aboutcategories of things (e.g. types of car, bird, train, plant etc.)</p>
+        <label><input type="radio" name="Question8" value="-" checked="checked"> Definitely Agree  </label>
+        <label><input type="radio" name="Question8" value="--"> Slightly Agree  </label>
+        <label><input type="radio" name="Question8" value="---"> Slightly Disagree  </label>
+        <label><input type="radio" name="Question8" value="----"> Definitely Disagree  </label>
+    </div>
+    <div class="question-container">
+        <p class="question-title">9. I find it easy to work out what someone isthinking or feeling just by looking at their face</p>
+        <label><input type="radio" name="Question9" value="-" checked="checked"> Definitely Agree  </label>
+        <label><input type="radio" name="Question9" value="--"> Slightly Agree  </label>
+        <label><input type="radio" name="Question9" value="---"> Slightly Disagree  </label>
+        <label><input type="radio" name="Question9" value="----"> Definitely Disagree  </label>
+    </div>
+    
+    <div class="question-container">
+        <p class="question-title">10. I find it difficult to work out people’s intentions</p>
+        <label><input type="radio" name="Question10" value="-" checked="checked"> Definitely Agree  </label>
+        <label><input type="radio" name="Question10" value="--"> Slightly Agree  </label>
+        <label><input type="radio" name="Question10" value="---"> Slightly Disagree  </label>
+        <label><input type="radio" name="Question10" value="----"> Definitely Disagree  </label>
+    </div>
+    <input type="submit" value="Submit">
+  </form>
+</body>
+<footer style="text-align:center">
+    <div>© 2024 Xiliourt. All rights reserved.</div>
+    <nav>
+        <a href="../privacy.html">Privacy Policy</a>
+    </nav>
+</footer>
+</html>
