@@ -1,440 +1,267 @@
-/* --- Original Light Mode Styles (Base Styles) --- */
-.disclaimer {
-    color: #f97316;
-    /* Orange color for disclaimer */
-    font-weight: bold;
-    border: 1px dashed #fb923c;
-    padding: 0.75rem;
-    border-radius: 0.375rem;
-    background-color: #fff7ed;
-    margin-top: 1rem;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    line-height: 1.6;
-    background-color: #f4f4f8;
-    /* Light background - Default */
-    color: #333;
-    /* Dark text - Default */
-}
-
-h1 {
-    text-align: center;
-    color: #2c3e50;
-    /* Dark blue-gray text */
-    border-bottom: 2px solid #3498db;
-    /* Blue border */
-    padding-bottom: 10px;
-    margin-top: 75px;
-}
-
-.section {
-    background-color: white;
-    /* White background */
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Shadow */
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
-.section h2 {
-    color: #2980b9;
-    /* Blue text */
-    border-bottom: 1px solid #bdc3c7;
-    /* Light gray border */
-    padding-bottom: 10px;
-    margin-top: 0;
-}
-
-.question-container {
-    background-color: white;
-    /* White background */
-    border-radius: 8px;
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #eee;
-    /* Very light gray border */
-}
-
-.question-title {
-    font-weight: bold;
-    color: #2980b9;
-    /* Blue text */
-    margin-bottom: 10px;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 8px 12px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    /* Transparent border initially */
-    /* Text color inherits from body (#333) */
-}
-
-label:hover {
-    background-color: #e9f5ff;
-    /* Lighter blue hover background */
-    border-color: #cce7ff;
-    /* Light blue border */
-}
-
-input[type="radio"]:checked+label {
-    background-color: #d6eaf8;
-    /* Light blue background for selected */
-    border-color: #aed6f1;
-    /* Slightly darker blue border */
-    font-weight: bold;
-    /* Text color inherits from body (#333) */
-}
-
-input[type="radio"]:focus+label {
-    outline: 2px solid #3498db;
-    /* Blue outline */
-    outline-offset: 2px;
-}
-
-input[type="radio"] {
-    opacity: 0;
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
+/* Basic Reset & Font (Assuming Inter font is loaded elsewhere) */
+ul {
+    list-style: none;
     padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+    margin: 0;
 }
-
-input[type="text"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    /* Light gray border */
-    border-radius: 4px;
-    margin-bottom: 10px;
-    width: calc(100% - 18px);
-    box-sizing: border-box;
-    background-color: white;
-    /* White background */
-    color: #333;
-    /* Dark text */
+a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
 }
-
-.text-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-    /* Dark text */
-}
-
-input[type="submit"] {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: #3498db;
-    /* Blue background */
-    color: white;
-    /* White text */
+button {
+    background: none;
     border: none;
-    border-radius: 8px;
+    padding: 0;
     cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
+    font: inherit; /* Inherit font styles */
+    color: inherit; /* Inherit color */
 }
 
-input[type="submit"]:hover {
-    background-color: #2980b9;
-    /* Darker blue on hover */
-}
-
-#score-display {
+/* Main Navigation Bar */
+.main-nav {
     position: fixed;
-    right: 20px;
-    width: 150px;
-    padding: 15px;
-    background-color: #e9f5ff;
-    /* Light blue background */
-    border: 1px solid #aed6f1;
-    /* Matching border */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    /* Shadow */
-    z-index: 1000;
-    text-align: center;
-    font-weight: bold;
-    color: #2c3e50;
-    /* Dark blue-gray text */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px; /* Equivalent to h-16 */
+    background-color: #fff; /* Equivalent to bg-white */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Equivalent to shadow-md */
+    z-index: 20;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Add transitions */
 }
 
-#score-display #current-score {
+/* Centering Container inside Nav */
+.nav-container {
+    max-width: 1280px; /* Example for 'container', adjust if needed */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* Equivalent to px-4 */
+    padding-right: 1rem; /* Equivalent to px-4 */
+    height: 100%;
+}
+
+/* List container for nav items */
+.nav-list {
+    display: flex;
+    justify-content: center; /* Equivalent to justify-center */
+    align-items: center; /* Equivalent to items-center */
+    height: 100%;
+}
+
+/* Individual Nav Items (li) */
+.nav-item {
+    /* Approximation for space-x-4/6 - adjust margin as needed */
+    margin-left: 1rem;
+    margin-right: 1rem;
+    height: 100%; /* Needed for vertical alignment */
+    display: flex; /* Needed for vertical alignment */
+    align-items: center; /* Needed for vertical alignment */
+}
+/* Remove margin for the first item if needed for centering */
+.nav-list .nav-item:first-child {
+    margin-left: 0;
+}
+.nav-list .nav-item:last-child {
+    margin-right: 0;
+}
+
+
+/* Standard Links */
+.nav-link {
+    display: block; /* Equivalent to block */
+    padding: 0.5rem 0.75rem; /* Equivalent to py-2 px-3 */
+    color: #374151; /* Equivalent to text-gray-700 */
+    font-weight: 500; /* Equivalent to font-medium */
+    transition: color 0.3s ease; /* Equivalent to transition-colors duration-300 */
+}
+
+.nav-link:hover {
+     color: #2563eb; /* Equivalent to hover:text-blue-600 */
+}
+
+/* Dropdown Specific Styling */
+.dropdown {
+    position: relative; /* Equivalent to relative */
+}
+
+/* Dropdown Toggle Button */
+.dropdown-toggle {
+    display: flex; /* Equivalent to flex */
+    align-items: center; /* Equivalent to items-center */
+    padding: 0.5rem 0.75rem; /* Equivalent to py-2 px-3 */
+    color: #374151; /* Equivalent to text-gray-700 */
+    font-weight: 500; /* Equivalent to font-medium */
+    transition: color 0.3s ease; /* Equivalent to transition-colors duration-300 */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Hover state for the toggle (direct or via parent li hover) */
+.dropdown-toggle:hover,
+.dropdown:hover .dropdown-toggle {
+     color: #2563eb; /* Equivalent to group-hover:text-blue-600 */
+}
+
+/* Dropdown Arrow Icon */
+.dropdown-toggle svg {
+    width: 1rem; /* Equivalent to w-4 */
+    height: 1rem; /* Equivalent to h-4 */
+    margin-left: 0.25rem; /* Equivalent to ml-1 */
+    color: #6b7280; /* Equivalent to text-gray-500 */
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+}
+
+/* Hover state for the icon (direct or via parent li hover) */
+.dropdown-toggle:hover svg,
+.dropdown:hover .dropdown-toggle svg {
+    color: #3b82f6; /* Equivalent to group-hover:text-blue-500 */
+}
+
+/* The Dropdown Menu itself */
+.dropdown-menu {
+    position: absolute; /* Equivalent to absolute */
+    display: none; /* Hidden by default */
+    top: 100%; /* Position below the toggle */
+    left: 0; /* Aligned to the left of the parent li (like sm:left-0) */
+    transform: none; /* Reset transform (like sm:transform-none) */
+    background-color: #fff; /* Equivalent to bg-white */
+    min-width: 12rem; /* Equivalent to w-48 */
+    border-radius: 0.375rem; /* Equivalent to rounded-md */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-lg */
+    margin-top: 0.25rem; /* Equivalent to mt-1 */
+    padding: 0.25rem 0; /* Equivalent to py-1 */
+    border: 1px solid rgba(0,0,0,0.05); /* Equivalent to ring-1 ring-black ring-opacity-5 */
+    z-index: 30; /* Ensure it's above other nav items */
+
+    /* Transition styles */
+    opacity: 0; /* Equivalent to opacity-0 */
+    transform: scale(0.95); /* Equivalent to scale-95 */
+    transform-origin: top left; /* Ensures scale animation starts from top-left */
+    pointer-events: none; /* Equivalent to pointer-events-none */
+    transition: opacity 0.15s ease-out, transform 0.15s ease-out, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Add transitions */
+}
+
+/* Remove or comment out this rule */
+/*
+.dropdown:hover .dropdown-menu {
     display: block;
-    font-size: 1.8em;
-    margin-top: 5px;
-    color: #3498db;
-    /* Blue color for the score */
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+*/
+
+/* Add this rule to show the menu when it has the 'is-open' class */
+.dropdown-menu.is-open {
+    display: block; /* Or potentially 'flex' or 'grid' if needed */
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
 }
 
-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 15px;
-    border-top: 1px solid #ccc;
-    /* Light gray border */
-    color: #555;
-    /* Medium gray text */
-    font-size: 0.9em;
+/* Optional: Add a class to the toggle when its menu is open for styling */
+.dropdown-toggle.is-active {
+    color: #2563eb; /* Example: Keep hover color */
+}
+.dropdown-toggle.is-active svg {
+    color: #3b82f6; /* Example: Keep hover color */
+    /* Optional: Rotate icon */
+    /* transform: rotate(180deg); */
 }
 
-.required-message {
-    color: red;
-    /* Red text */
-    text-align: center;
-    margin-top: 10px;
-    font-weight: bold;
-    display: none;
+/* Links inside the dropdown */
+.dropdown-link {
+    display: block; /* Equivalent to block */
+    padding: 0.5rem 1rem; /* Equivalent to px-4 py-2 */
+    font-size: 0.875rem; /* Equivalent to text-sm */
+    color: #374151; /* Equivalent to text-gray-700 */
+    white-space: nowrap; /* Prevent wrapping */
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.results-disclaimer {
-    background-color: #f9f9f9;
-    /* Very light gray background */
-    border: 1px solid #e0e0e0;
-    /* Light gray border */
-    border-radius: 8px;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 0.9em;
-    border-left: 5px solid #e74c3c;
-    /* Red left border */
-    color: #333;
-    /* Dark text */
-    display: none;
+.dropdown-link:hover {
+    background-color: #f3f4f6; /* Equivalent to hover:bg-gray-100 */
+    color: #111827; /* Equivalent to hover:text-gray-900 */
 }
 
-#results {
-    font-weight: bold;
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: #eaf4ff;
-    /* Very light blue background */
-    border-radius: 5px;
-    color: #333;
-    /* Dark text */
-}
+        /* Styling for the floating toggle button */
+        #theme-toggle-button {
+            position: fixed; /* Keeps the button in place during scroll */
+            bottom: 20px;    /* Distance from the bottom edge */
+            right: 20px;     /* Distance from the right edge */
+            padding: 12px 18px; /* Button padding */
+            font-size: 16px;
+            font-weight: bold;
+            color: white;    /* Text color */
+            background-color: #007bff; /* Default background (blue) */
+            border: none;
+            border-radius: 30px; /* Make it rounded */
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+            z-index: 1000; /* Ensure it stays on top of other content */
+            transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+        }
 
-
-/* ============================================= */
-/* --- Dark Mode Styles (Applied via body.dark-mode class) --- */
-/* ============================================= */
-
+/* --- Dark Mode Styles --- */
 body.dark-mode {
-    background-color: #1f2937;
-    color: #ffffff;
-    /* Changed from #d1d5db for consistency */
+    background-color: #1f2937; /* Dark background for the whole page */
+    color: #d1d5db; /* Default light text color */
 }
 
-body.dark-mode .disclaimer {
-    color: #fdba74;
-    /* Lighter orange for better contrast on dark */
-    border-color: #f97316;
-    /* Keep border orange */
-    background-color: #4a2c0f;
-    /* Dark orange/brown background */
+body.dark-mode .main-nav {
+    background-color: #111827; /* Darker nav background */
+    box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.05), 0 2px 4px -1px rgba(255, 255, 255, 0.03); /* Lighter shadow for dark bg */
+    border-bottom: 1px solid #374151; /* Optional: Subtle border */
 }
 
-body.dark-mode h1 {
-    color: #e5e7eb;
-    /* Lighter text */
-    border-bottom-color: #5dade2;
-    /* Lighter blue border */
+body.dark-mode .nav-link {
+    color: #d1d5db; /* Light text color for links */
 }
 
-body.dark-mode .section {
-    background-color: #374151;
-    /* Slightly lighter dark gray */
-    box-shadow: none;
-    /* Remove shadow, less effective on dark */
-    border: 1px solid #4b5563;
-    /* Add subtle border instead */
+body.dark-mode .nav-link:hover {
+    color: #60a5fa; /* Brighter blue for hover */
 }
 
-body.dark-mode .section h2 {
-    color: #7cc5f8;
-    /* Lighter blue text */
-    border-bottom-color: #4b5563;
-    /* Darker gray border */
+body.dark-mode .dropdown-toggle {
+    color: #d1d5db; /* Light text color for dropdown toggle */
 }
 
-body.dark-mode .question-container {
-    background-color: #374151;
-    /* Match section background */
-    border-color: #4b5563;
-    /* Darker gray border */
+body.dark-mode .dropdown-toggle:hover,
+body.dark-mode .dropdown:hover .dropdown-toggle,
+body.dark-mode .dropdown-toggle.is-active {
+    color: #60a5fa; /* Brighter blue for hover/active */
 }
 
-body.dark-mode .question-title {
-    color: #7cc5f8;
-    /* Lighter blue text */
+body.dark-mode .dropdown-toggle svg {
+    color: #9ca3af; /* Slightly lighter gray for icon */
 }
 
-body.dark-mode label {
-    /* Text color inherited from body.dark-mode (#ffffff) */
-    border-color: transparent;
-    color: #ffffff;
-    /* Explicitly set */
+body.dark-mode .dropdown-toggle:hover svg,
+body.dark-mode .dropdown:hover .dropdown-toggle svg,
+body.dark-mode .dropdown-toggle.is-active svg {
+    color: #93c5fd; /* Lighter blue for icon hover/active */
 }
 
-body.dark-mode label:hover {
+body.dark-mode .dropdown-menu {
+    background-color: #1f2937; /* Dark background for dropdown menu */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2); /* Darker shadow */
+    border: 1px solid #4b5563; /* Darker border */
+}
+
+body.dark-mode .dropdown-link {
+    color: #d1d5db; /* Light text for dropdown items */
+}
+
+body.dark-mode .dropdown-link:hover {
+    background-color: #374151; /* Darker gray for hover background */
+    color: #f9fafb; /* Even lighter text on hover */
+}
+
+body.dark-mode #theme-toggle-button {
+    background-color: #374151; /* Darker background for toggle button */
+    color: #e5e7eb; /* Light text color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+}
+/* Optional: Hover state for dark mode theme button */
+body.dark-mode #theme-toggle-button:hover {
     background-color: #4b5563;
-    /* Darker gray hover background */
-    border-color: #6b7280;
-    /* Slightly lighter gray border */
-}
-
-body.dark-mode input[type="radio"]:checked+label {
-    background-color: #436a8f;
-    /* Darker blue background for selected */
-    border-color: #60a5fa;
-    /* Brighter blue border */
-    color: #ffffff;
-    /* Ensure text is white */
-}
-
-body.dark-mode input[type="radio"]:focus+label {
-    outline-color: #60a5fa;
-    /* Lighter blue outline */
-}
-
-body.dark-mode input[type="text"] {
-    border-color: #6b7280;
-    /* Medium-dark gray border */
-    background-color: #4b5563;
-    /* Darker input background */
-    color: #e5e7eb;
-    /* Light text */
-}
-
-body.dark-mode .text-label {
-    color: #d1d5db;
-    /* Kept slightly dimmer gray for labels */
-}
-
-body.dark-mode input[type="submit"] {
-    background-color: #3b82f6;
-    /* Standard blue (adjust if needed) */
-    color: white;
-    /* Keep white text */
-}
-
-body.dark-mode input[type="submit"]:hover {
-    background-color: #2563eb;
-    /* Slightly darker blue on hover */
-}
-
-body.dark-mode #score-display {
-    background-color: #374151;
-    /* Dark gray background */
-    border-color: #4b5563;
-    /* Darker gray border */
-    box-shadow: none;
-    /* Remove shadow */
-    color: #e5e7eb;
-    /* Light text */
-}
-
-body.dark-mode #score-display #current-score {
-    color: #93c5fd;
-    /* Lighter blue for the score */
-}
-
-body.dark-mode footer {
-    border-top-color: #4b5563;
-    /* Darker gray border */
-    color: #9ca3af;
-    /* Medium-light gray text */
-}
-
-body.dark-mode .required-message {
-    color: #f87171;
-    /* Slightly lighter red for better visibility */
-}
-
-body.dark-mode .results-disclaimer {
-    background- VScodeTheme=#4b5563;
-    /* Dark gray background */
-    border-color: #6b7280;
-    /* Medium-dark gray border */
-    border-left-color: #ef4444;
-    /* Keep red, maybe slightly adjusted */
-    color: #e5e7eb;
-    /* Light text */
-}
-
-body.dark-mode #results {
-    background-color: #2d4a6e;
-    /* Dark blue background */
-    color: #e5e7eb;
-    /* Light text */
-}
-
-body.dark-mode .results-disclaimer {
-    background-color: #2d4a6e;
-    /* Very light gray background */
-    border: 1px solid #e0e0e0;
-    /* Light gray border */
-    border-radius: 8px;
-    padding: 15px;
-    margin-top: 30px;
-    font-size: 0.9em;
-    border-left: 5px solid #e74c3c;
-    /* Red left border */
-    color: #e5e7eb;
-    /* Dark text */
-    display: none;
-}
-
-/* --- Layout Media Queries (Apply in both Light and Dark Mode) --- */
-@media (max-width: 1000px) {
-    body {
-        /* This padding might need review depending on fixed elements */
-        padding-right: 190px;
-    }
-
-    #score-display {
-        bottom: 20px;
-        /* Ensure position is correct relative to viewport */
-        top: auto;
-        /* Override min-width rule */
-
-    }
-
-    /* Apply dark mode styles *within* this media query if needed */
-    body.dark-mode {
-        /* Any specific dark mode overrides for small screens */
-    }
-}
-
-@media (min-width: 1000px) {
-    #score-display {
-        top: 100px;
-        /* Ensure position is correct relative to viewport */
-        bottom: auto;
-        /* Override max-width rule */
-    }
-
-    /* Apply dark mode styles *within* this media query if needed */
-    body.dark-mode {
-        /* Any specific dark mode overrides for large screens */
-    }
 }
